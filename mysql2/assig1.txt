@@ -1,0 +1,12 @@
+
+mysql> select dept_name,class_name from tbl_deptmt join tb_classes on pk_dept_id
+=fk_dept_id where fk_dept_id=1;
++------------------+------------+
+| dept_name        | class_name |
++------------------+------------+
+| computer science | CS100      |
+| computer science | CS101      |
+| computer science | CS102      |
+| computer science | CS103      |
++------------------+------------+
+4 rows in set (0.00 sec)

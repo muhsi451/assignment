@@ -1,0 +1,16 @@
+mysql> select e1.vchr_emp as employee_name,ifnull(e2.vchr_emp,'Top manager')as m
+anager_name from tb_employee e1 left join tb_employee e2 on e1.fk_mngr_id=e2.pk_
+emp_id;
++---------------+--------------+
+| employee_name | manager_name |
++---------------+--------------+
+| shareef       | Top manager  |
+| bari          | shareef      |
+| shafeeq       | shareef      |
+| abi           | bari         |
+| subi          | shafeeq      |
+| shami         | bari         |
+| athee         | shafeeq      |
+| niyu          | shafeeq      |
++---------------+--------------+
+8 rows in set (0.08 sec)

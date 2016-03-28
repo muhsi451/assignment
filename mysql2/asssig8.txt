@@ -1,0 +1,13 @@
+mysql> select name,course,grade from tb_student join tb_grade on roll_no=fk_roll
+_no
+    -> where grade='A';
++----------+--------+-------+
+| name     | course | grade |
++----------+--------+-------+
+| Paul     | Java   | A     |
+| Akhil    | C      | A     |
+| Maya     | PHP    | A     |
+| Maya     | Java   | A     |
+| Sandheep | PHP    | A     |
++----------+--------+-------+
+5 rows in set (0.00 sec)

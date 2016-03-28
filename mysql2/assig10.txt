@@ -1,0 +1,11 @@
+
+mysql> select name,roll_no,count(course) from tb_student join tb_grade on roll_n
+o=fk_roll_no group by course;
++------+---------+---------------+
+| name | roll_no | count(course) |
++------+---------+---------------+
+| Paul |       1 |             3 |
+| Paul |       1 |             5 |
+| Maya |       4 |             2 |
++------+---------+---------------+
+3 rows in set (0.00 sec)

@@ -1,0 +1,16 @@
+
+mysql> select class_name,dept_name,count from tb_classes join tbl_deptmt on fk_d
+ept_id=pk_dept_id join tb_enrollment on pk_class_id=fk_class_id
+    -> order by count asc;
++------------+------------------+-------+
+| class_name | dept_name        | count |
++------------+------------------+-------+
+| CS102      | computer science |    10 |
+| CS103      | computer science |    12 |
+| CC300      | Commerce         |    14 |
+| CS101      | computer science |    15 |
+| CS100      | computer science |    40 |
+| EC200      | Electronics      |    60 |
+| AT400      | Arts             |   200 |
++------------+------------------+-------+
+7 rows in set (0.00 sec)

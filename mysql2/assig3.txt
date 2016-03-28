@@ -1,0 +1,12 @@
+
+mysql> select dept_name,count(class_name) from tbl_deptmt join tb_classes on pk_
+dept_id=fk_dept_id group by dept_name;
++------------------+-------------------+
+| dept_name        | count(class_name) |
++------------------+-------------------+
+| Arts             |                 1 |
+| Commerce         |                 1 |
+| computer science |                 4 |
+| Electronics      |                 1 |
++------------------+-------------------+
+4 rows in set (0.00 sec)

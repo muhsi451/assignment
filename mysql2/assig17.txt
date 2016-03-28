@@ -1,0 +1,12 @@
+mysql> select vchr_emp as employee_name,ifnull(char_rating,'no rating')as manage
+r_name from employee left join emp_detail on fk_emp_id=pk_int_id;
++---------------+--------------+
+| employee_name | manager_name |
++---------------+--------------+
+| ashi          | A            |
+| shafi         | B            |
+| anu           | B            |
+| naji          | no rating    |
+| riyas         | no rating    |
++---------------+--------------+
+5 rows in set (0.05 sec)

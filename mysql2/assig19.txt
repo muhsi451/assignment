@@ -1,0 +1,11 @@
+mysql> select project_name,album_name,pic_name from tbl_project left join tbl_al
+bum on pk_proj_id=fk_pro_id join tbl_picture on pk_album_id=fk_album_id;
++----------------------+------------+----------+
+| project_name         | album_name | pic_name |
++----------------------+------------+----------+
+| robotic              | mechpro    | cs       |
+| secret_share         | cspro      | ec       |
+| microcontroller      | ecpro      | mc       |
+| corrosion resistance | civilpro   | home     |
++----------------------+------------+----------+
+4 rows in set (0.09 sec)

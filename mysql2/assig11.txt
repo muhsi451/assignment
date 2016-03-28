@@ -1,0 +1,10 @@
+mysql> select name,city,course from tb_student join tb_grade on roll_no=fk_roll_
+no
+    -> where city='bangalore' and course='Java';
++-------+-----------+--------+
+| name  | city      | course |
++-------+-----------+--------+
+| Maya  | Bangalore | Java   |
+| Anoop | Bangalore | Java   |
++-------+-----------+--------+
+2 rows in set (0.00 sec)

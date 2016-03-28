@@ -1,0 +1,12 @@
+mysql> select name,extract(year from current_date)-extract(year from date_dob)as
+ age from tb_student;
++----------+------+
+| name     | age  |
++----------+------+
+| Paul     |   25 |
+| Akhil    |   30 |
+| Maya     |   29 |
+| Sandheep |   23 |
+| Anoop    |   26 |
++----------+------+
+5 rows in set (0.03 sec)

@@ -1,0 +1,11 @@
+mysql> select name,date_format(date_dob,'%y-%b-%d')from tb_student;
++----------+----------------------------------+
+| name     | date_format(date_dob,'%y-%b-%d') |
++----------+----------------------------------+
+| Paul     | 91-Jul-14                        |
+| Akhil    | 86-Jan-12                        |
+| Maya     | 87-Nov-12                        |
+| Sandheep | 93-Sep-13                        |
+| Anoop    | 90-May-15                        |
++----------+----------------------------------+
+5 rows in set (0.09 sec)

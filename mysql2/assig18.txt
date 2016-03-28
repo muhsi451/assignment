@@ -1,0 +1,21 @@
+mysql> select pk_cat_id,cat_name,pk_proj_id,project_name,pk_pic_id,pic_name,pk_a
+lbum_id,album_name from tbl_category left join tbl_project on fk_cat_id=pk_cat_i
+d join tbl_album on fk_pro_id=pk_proj_id join tbl_picture on fk_album_id=pk_albu
+m_id;
++-----------+------------+------------+----------------------+-----------+------
+----+-------------+------------+
+| pk_cat_id | cat_name   | pk_proj_id | project_name         | pk_pic_id | pic_n
+ame | pk_album_id | album_name |
++-----------+------------+------------+----------------------+-----------+------
+----+-------------+------------+
+|         3 | mechanic   |          3 | robotic              |         3 | cs
+    |           1 | mechpro    |
+|         2 | electronic |          1 | secret_share         |         2 | ec
+    |           2 | cspro      |
+|         2 | electronic |          2 | microcontroller      |         4 | mc
+    |           3 | ecpro      |
+|         4 | civil      |          4 | corrosion resistance |         1 | home
+    |           4 | civilpro   |
++-----------+------------+------------+----------------------+-----------+------
+----+-------------+------------+
+4 rows in set (0.00 sec)

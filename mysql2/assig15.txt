@@ -1,0 +1,9 @@
+mysql> select a.person_name as child,c.person_name as grand_parentname from fami
+ly a join family b on a.fk_int_parent_id=b.pk_int_person_id join family c on b.f
+k_int_parent_id=c.pk_int_person_id;
++-------+------------------+
+| child | grand_parentname |
++-------+------------------+
+| child | Grand parent     |
++-------+------------------+
+1 row in set (0.03 sec)

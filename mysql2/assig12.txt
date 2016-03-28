@@ -1,0 +1,11 @@
+
+mysql> select name,course from tb_student join tb_grade on roll_no=fk_roll_no
+    -> where name like"a%";
++-------+--------+
+| name  | course |
++-------+--------+
+| Akhil | C      |
+| Akhil | Java   |
+| Anoop | Java   |
++-------+--------+
+3 rows in set (0.00 sec)
