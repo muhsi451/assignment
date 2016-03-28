@@ -1,0 +1,18 @@
+insert into tbl_stock(name,qty,price)values('mouse',10,500);
+insert into tbl_stock(name,qty,price)values('keyboard',5,450);
+insert into tbl_stock(name,qty,price)values('modem',10,1200);
+insert into tbl_stock(name,qty,price)values('memory',100,1500);
+insert into tbl_stock(name,qty,price)values('headphone',50,750);
+insert into tbl_stock(name,qty,price)values('memory',2,3500);
+
+
+
+insert into tbl_supplier(vchr_suplier_name)values('logitech');
+insert into tbl_supplier(vchr_suplier_name)values('samsung');
+insert into tbl_supplier(vchr_suplier_name)values('iball');
+insert into tbl_supplier(vchr_suplier_name)values('LG');
+insert into tbl_supplier(vchr_suplier_name)values('creative');
+
+
+
+

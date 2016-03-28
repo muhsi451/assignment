@@ -1,0 +1,6 @@
+mysql> select count(name) from tbl_stock;
++-------------+
+| count(name) |
++-------------+
+|           5 |
++-------------+

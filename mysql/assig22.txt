@@ -1,0 +1,8 @@
+
+mysql> select sum(count) from tbl_enrollment;
++------------+
+| sum(count) |
++------------+
+|        351 |
++------------+
+1 row in set (0.06 sec)

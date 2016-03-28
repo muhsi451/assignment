@@ -1,0 +1,11 @@
+
+mysql> select name from tbl_stock
+    -> where price>1000;
++--------+
+| name   |
++--------+
+| modem  |
+| memory |
+| memory |
++--------+
+3 rows in set (0.04 sec)

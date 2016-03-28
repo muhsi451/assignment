@@ -1,0 +1,18 @@
+ysql> alter table tbl_stock change price price float(20,20);
+uery OK, 6 rows affected, 6 warnings (1.30 sec)
+ecords: 6  Duplicates: 0  Warnings: 6
+
+ysql> select * from tbl_stock;
+-------------+-----------+------+------------------------+
+ pk_stock_id | Name      | Qty  | price                  |
+-------------+-----------+------+------------------------+
+           1 | mouse     |   10 | 1.00000000000000000000 |
+           2 | keyboard  |    5 | 1.00000000000000000000 |
+           3 | modem     |   10 | 1.00000000000000000000 |
+           4 | memmory   |  100 | 1.00000000000000000000 |
+           5 | headphone |   50 | 1.00000000000000000000 |
+           6 | memmory   |    2 | 1.00000000000000000000 |
+-------------+-----------+------+------------------------+
+ rows in set (0.01 sec)
+ 
+ 

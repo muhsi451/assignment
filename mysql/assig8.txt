@@ -1,0 +1,11 @@
+
+mysql> select * from tbl_dept;
++------------+-----------+------------------+
+| pk_dept_id | dept_name | dept_description |
++------------+-----------+------------------+
+|          1 | ABC       | NULL             |
+|          2 | DEF       | NULL             |
+|          3 | GHI       | NULL             |
+|          4 | JKL       | NULL             |
++------------+-----------+------------------+
+4 rows in set (0.00 sec)

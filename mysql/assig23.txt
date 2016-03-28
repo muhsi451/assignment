@@ -1,0 +1,7 @@
+mysql> select count(class_name) from tbl_classes;
++-------------------+
+| count(class_name) |
++-------------------+
+|                 7 |
++-------------------+
+1 row in set (0.00 sec)

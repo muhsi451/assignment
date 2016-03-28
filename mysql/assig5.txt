@@ -1,0 +1,3 @@
+mysql> alter table tbl_stock add fk_int_supplier int,add constraint foreign key(
+fk_int_supplier) references tbl_supplier(pk_supplier_id);
+Query OK, 6 rows affected (1.05 sec)

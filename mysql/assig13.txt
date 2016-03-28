@@ -1,0 +1,22 @@
+mysql> alter table tbl_stock
+    -> add total float;
+Query OK, 0 rows affected (0.60 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update tbl_stock
+    -> set total=price*qty;
+Query OK, 6 rows affected (0.16 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+mysql> select * from tbl_stock;
++-------------+-----------+------+--------+-----------------+--------+
+| pk_stock_id | name      | qty  | price  | fk_int_supplier | total  |
++-------------+-----------+------+--------+-----------------+--------+
+|           1 | mouse     |   10 |  501.5 |            NULL |   5015 |
+|           2 | keyboard  |    5 |  451.5 |            NULL | 2257.5 |
+|           3 | modem     |   10 | 1201.5 |            NULL |  12015 |
+|           4 | memory    |  100 | 1501.5 |            NULL | 150150 |
+|           5 | headphone |   50 |  751.5 |            NULL |  37575 |
+|           6 | memory    |    2 | 3501.5 |            NULL |   7003 |
++-------------+-----------+------+--------+-----------------+--------+
+6 rows in set (0.00 sec)

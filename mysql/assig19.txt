@@ -1,0 +1,12 @@
+
+mysql> select ucase(name), round(price,0) as roundedprice from tbl_stock;
++-------------+--------------+
+| ucase(name) | roundedprice |
++-------------+--------------+
+| MOUSE       |          502 |
+| KEYBOARD    |          452 |
+| MODEM       |         1202 |
+| HEADPHONE   |          752 |
+| MEMORY      |         3502 |
++-------------+--------------+
+5 rows in set (0.06 sec)

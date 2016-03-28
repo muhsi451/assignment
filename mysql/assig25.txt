@@ -1,0 +1,12 @@
+mysql> select concat(name,'',price) from tbl_stock
+    -> ;
++-----------------------+
+| concat(name,'',price) |
++-----------------------+
+| Mouse501.5            |
+| keyboard451.5         |
+| Modem1201.5           |
+| Headphone751.5        |
+| memory3501.5          |
++-----------------------+
+5 rows in set (0.17 sec)

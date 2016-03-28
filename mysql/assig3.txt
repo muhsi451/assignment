@@ -1,0 +1,6 @@
+create table Tbl_Supplier(pk_supplier_id int primary key auto_increment,vchr_supplier_name varchar(50));
+insert into Tbl_supplier(vchr_supplier_name)values('Logitech');
+insert into Tbl_supplier(vchr_supplier_name)values('Samsung');
+insert into Tbl_supplier(vchr_supplier_name)values('Iball');
+insert into Tbl_supplier(vchr_supplier_name)values('LG');
+insert into Tbl_supplier(vchr_supplier_name)values('Creative');

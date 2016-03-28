@@ -1,0 +1,7 @@
+mysql> select count(dept_name) from tbl_dept;
++------------------+
+| count(dept_name) |
++------------------+
+|                4 |
++------------------+
+1 row in set (0.14 sec)

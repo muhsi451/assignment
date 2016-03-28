@@ -1,0 +1,8 @@
+
+mysql> select max(price) from tbl_stock;
++------------+
+| max(price) |
++------------+
+|     3501.5 |
++------------+
+1 row in set (0.03 sec)
