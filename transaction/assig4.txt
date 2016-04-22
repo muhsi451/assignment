@@ -1,0 +1,40 @@
+delimiter //
+create procedure updatestud()
+begin 
+declare flag int default 0;
+declare a int;
+declare id int;
+declare stud cursor for select pk_stud_id,(fee-amt_paid) from students join tb_course on fk_course_id=pk_crs_id;
+declare continue handler for not found set flag=1;
+open stud;
+loops:loop
+fetch stud into id,a;
+if a>1000 then
+   update students set bal_status='inactivate' where pk_stud_id=id; 
+else
+   update students set bal_status='activate' where pk_stud_id=id;   
+end if;
+if flag=1 then
+leave loops;
+else 
+iterate loops;
+end if;
+end loop loops;
+close stud;
+end //
+delimiter ;
+call updatestud();   
+   
+   
+   
+   mysql>    select * from students;
++------------+-----------+--------------+----------+--------------+------------+
+| pk_stud_id | stud_name | stud_address | amt_paid | fk_course_id | bal_status |
++------------+-----------+--------------+----------+--------------+------------+
+|          1 | minnu     | fgdhfg       |     2000 |            1 | inactivate |
+|          2 | anu       | abcd         |      900 |            2 | inactivate |
+|          3 | finu      | adtrdbhdd    |     3000 |            3 | activate   |
+|          4 | filu      | uytksbhdd    |      950 |            4 | inactivate |
+|          5 | rinu      | ddefsbhdd    |     5000 |            5 | activate   |
++------------+-----------+--------------+----------+--------------+------------+
+5 rows in set (0.00 sec)

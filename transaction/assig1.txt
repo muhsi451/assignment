@@ -1,0 +1,47 @@
+delimiter $$
+create procedure stud1()
+begin
+declare flag int default 0;
+declare continue handler for sqlexception,sqlwarning set flag=1;
+start transaction;
+insert into students(stud_name,stud_address)values('finu','adtrdbhdd');
+insert into students(stud_name,stud_address)values('filu','uytksbhdd');
+insert into students(stud_name,stud_address)values('rinu','ddefsbhdd');
+insert into stud_login(email,password)values('dsssds@gmail.com','233535');
+insert into stud_login(email,password)values('vrvsds@gmail.com','545342');
+insert into stud_login(email,password)values('ddfvds@gmail.com','35466');
+insert into stud_login(email,password)values('mvjfjds@gmail.com','132435');
+if flag=1 then
+   rollback;
+else
+   commit;
+end if;
+end $$
+delimiter ;
+call stud1();
+
+
+mysql> select * from students;
++------------+-----------+--------------+
+| pk_stud_id | stud_name | stud_address |
++------------+-----------+--------------+
+|          1 | minnu     | fgdhfg       |
+|          2 | anu       | abcd         |
+|          3 | finu      | adtrdbhdd    |
+|          4 | filu      | uytksbhdd    |
+|          5 | rinu      | ddefsbhdd    |
++------------+-----------+--------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from stud_login;
++-----------+-------------------+----------+
+| pk_log_id | email             | password |
++-----------+-------------------+----------+
+|         1 | abca@gmail.com    | 19876    |
+|         2 | dsssds@gmail.com  | 233535   |
+|         3 | vrvsds@gmail.com  | 545342   |
+|         4 | ddfvds@gmail.com  | 35466    |
+|         5 | mvjfjds@gmail.com | 132435   |
++-----------+-------------------+----------+
+5 rows in set (0.00 sec)
+   

@@ -1,0 +1,49 @@
+delimiter $$
+create procedure teach1()
+begin
+declare flag int default 0;
+declare continue handler for sqlexception,sqlwarning set flag=1;
+start transaction;
+insert into teachers(teach_name,subject)values('abc','eng');
+insert into teachers(teach_name,subject)values('jhg','mal');
+insert into teachers(teach_name,subject)values('htg','phy');
+insert into teachers(teach_name,subject)values('grd','his');
+insert into teachers(teach_name,subject)values('dfe','che');
+insert into teach_login(email,password)values('abc@gmail.com','2343545');
+insert into teach_login(email,password)values('jhg@gmail.com','3654375');
+insert into teach_login(email,password)values('htg@gmail.com','34843545');
+insert into teach_login(email,password)values('grd@gmail.com','2344545');
+insert into teach_login(email,password)values('dfe@gmail.com','234563565');
+if flag=1 then
+   rollback;
+else
+   commit;
+end if;
+end $$
+delimiter ;
+call teach1();   
+
+
+mysql> select * from teachers;
++-----------+------------+---------+
+| pk_tch_id | teach_name | subject |
++-----------+------------+---------+
+|         1 | abc        | eng     |
+|         2 | jhg        | mal     |
+|         3 | htg        | phy     |
+|         4 | grd        | his     |
+|         5 | dfe        | che     |
++-----------+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select * from teach_login;
++-----------+---------------+-----------+
+| pk_log_id | email         | password  |
++-----------+---------------+-----------+
+|         1 | abc@gmail.com | 2343545   |
+|         2 | jhg@gmail.com | 3654375   |
+|         3 | htg@gmail.com | 34843545  |
+|         4 | grd@gmail.com | 2344545   |
+|         5 | dfe@gmail.com | 234563565 |
++-----------+---------------+-----------+
+5 rows in set (0.00 sec)
