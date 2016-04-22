@@ -1,0 +1,10 @@
+
+mysql> desc tbl_grade;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| fk_int_no   | int(11)     | YES  | MUL | NULL    |       |
+| vchr_course | varchar(20) | YES  |     | NULL    |       |
+| vchr_grade  | char(1)     | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)

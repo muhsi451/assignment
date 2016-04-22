@@ -1,0 +1,11 @@
+
+mysql> desc tbl_user;
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| pk_int_user_id | int(11)     | NO   | PRI | NULL    | auto_increment |
+| vchr_username  | varchar(20) | YES  |     | NULL    |                |
+| vchr_password  | varchar(20) | YES  |     | NULL    |                |
+| fk_int_id      | int(11)     | YES  | MUL | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.03 sec)

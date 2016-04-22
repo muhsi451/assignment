@@ -1,0 +1,15 @@
+
+mysql> desc tbl_teacher;
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| pk_tchr_id      | int(11)      | NO   | PRI | NULL    | auto_increment |
+| fk_user_id      | int(11)      | YES  | MUL | NULL    |                |
+| vchr_tchr_name  | varchar(50)  | YES  |     | NULL    |                |
+| fk_dept_id      | int(11)      | YES  | MUL | NULL    |                |
+| dat_tchr_dob    | date         | YES  |     | NULL    |                |
+| vchr_tchr_place | varchar(100) | YES  |     | NULL    |                |
+| tchr_head_id    | int(11)      | YES  |     | NULL    |                |
+| bln_tchr_status | tinyint(1)   | YES  |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
+8 rows in set (0.14 sec)

@@ -1,0 +1,16 @@
+delimiter $$
+create procedure stud(in yr int,in mnth int,out stud int,out fee int)
+begin
+select fph_amt,vchr_stud_name into fee,stud from table_student join tbl_fee_pay_history on pk_stud_id=fk_stud_id where extract(year from fph_date)=yr and extract(month from fph_date)=mnth;
+end $$
+delimiter ;
+call stud(2014,05,@stud,@fee);
+
+
+mysql> select @stud,@fee;
++-------+------+
+| @stud | @fee |
++-------+------+
+| stud1 | 4000 |
++-------+------+
+1 row in set (0.00 sec)

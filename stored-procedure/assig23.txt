@@ -1,0 +1,16 @@
+delimiter $$
+create procedure deptfee1(in dept varchar(20),out fee int)
+begin
+ select fph_amt into fee from tbl_fee_pay_history join tbl_department on pk_dept_id=fk_dept_id where vchr_dept_name=dept;
+end $$
+delimiter ;
+call deptfee1('dept3',@fee);
+
+
+mysql> select @fee;
++------+
+| @fee |
++------+
+| 5500 |
++------+
+1 row in set (0.00 sec)

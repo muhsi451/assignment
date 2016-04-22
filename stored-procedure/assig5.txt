@@ -1,0 +1,19 @@
+
+mysql> delimiter &&
+mysql> create procedure data1(in gr varchar(20),out a int)
+    -> begin
+    -> select count(fk_int_no) into a from tbl_grade where vchr_grade=gr;
+    -> end &&
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> delimiter ;
+mysql> call data1('A',@a);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select @a;
++------+
+| @a   |
++------+
+|    4 |
++------+
+1 row in set (0.00 sec)

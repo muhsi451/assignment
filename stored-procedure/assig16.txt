@@ -1,0 +1,326 @@
+Q:16
+A)
+
+delimiter !!
+create procedure csp_insert_userrole(in a int)
+begin
+declare count int default 1;
+insert_loop:loop
+insert into tbl_user_role(vchr_user)values(concat('vchr_user',count+1));
+set count=count+1;
+if count<=a then iterate insert_loop;
+else leave insert_loop;
+end if;
+end loop insert_loop;
+end !!
+delimiter ;
+call csp_insert_userrole(5);
+
+
+mysql> select * from tbl_user_role;
++-----------+------------+
+| pk_int_id | vchr_user  |
++-----------+------------+
+|         2 | user2      |
+|         3 | user3      |
+|         4 | user4      |
+|         5 | user5      |
+|         6 | user6      |
+|         7 | user7      |
+|         8 | user8      |
+|         9 | user9      |
+|        10 | user10     |
+
+
+B)
+delimiter &&
+create procedure csp_insert_user(IN b int)
+begin
+declare count int default 1;
+insert_loop:loop
+insert into tbl_user(vchr_username,vchr_password,fk_int_id)values(concat('username',count+1),concat('pass',count+1),count+1);
+set count=count+1;
+if count<=b then iterate insert_loop;
+else leave insert_loop;
+end if;
+end loop insert_loop;
+end &&
+delimiter ;
+call csp_insert_user(5);
+
+
+mysql> select * from tbl_user;
++----------------+---------------+---------------+-----------+
+| pk_int_user_id | vchr_username | vchr_password | fk_int_id |
++----------------+---------------+---------------+-----------+
+|              1 | username2     | pass2         |         2 |
+|              2 | username3     | pass3         |         3 |
+|              3 | username4     | pass4         |         4 |
+|              4 | username5     | pass5         |         5 |
+|              5 | username6     | pass6         |         6 |
+|              6 | username2     | pass2         |         2 |
+|              7 | username3     | pass3         |         3 |
+|              8 | username4     | pass4         |         4 |
+|              9 | username5     | pass5         |         5 |
+|             10 | username6     | pass6         |         6 |
++----------------+---------------+---------------+-----------+
+10 rows in set (0.08 sec)
+
+
+C)
+delimiter ##
+create procedure csp_insert_dept(in c int)
+begin
+declare count int default 1;
+insert_loop:loop
+insert into tbl_department(vchr_dept_name,bln_dept_active)values(concat('dept',count+1),count+1);
+set count=count+1;
+if count<=c then iterate insert_loop;
+else leave insert_loop;
+end if;
+end loop insert_loop;
+end ##
+delimiter ;
+call csp_insert_dept(5);
+
+
+
+mysql> select * from tbl_department;
++------------+----------------+-----------------+
+| pk_dept_id | vchr_dept_name | bln_dept_active |
++------------+----------------+-----------------+
+|          1 | dept2          |               2 |
+|          2 | dept3          |               3 |
+|          3 | dept4          |               4 |
+|          4 | dept5          |               5 |
+|          5 | dept6          |               6 |
++------------+----------------+-----------------+
+5 rows in set (0.00 sec)
+
+
+D)
+delimiter ^^
+create procedure csp_insert_stud(in d int)
+begin
+declare count int default 1;
+insert_loop:loop
+insert into table_student(fk_int_user_id,vchr_stud_name,dat_stud_dob,vchr_stud_dist,vchr_stud_place,fk_int_dept_id,bln_stud_status)values(count+1,concat('studname',count+1),concat('dob',count+1),concat('studdist',count+1),concat('studplace',count+1),count+1,count+1));
+set count=count+1;
+if count<=d then iterate insert_loop;
+else leave insert_loop;
+end if;
+end loop insert_loop;
+end ^^
+delimiter ;
+call csp_insert_stud(5);
+
+
+mysql> select * from table_student;
++------------+----------------+----------------+--------------+----------------+
+-----------------+----------------+-----------------+
+| pk_stud_id | fk_int_user_id | vchr_stud_name | dat_stud_dob | vchr_stud_dist |
+ vchr_stud_place | fk_int_dept_id | bln_stud_status |
++------------+----------------+----------------+--------------+----------------+
+-----------------+----------------+-----------------+
+|          1 |              2 | studname2      | 0000-00-00   | studdist2      |
+ studplace2      |              2 |               2 |
+|          2 |              3 | studname3      | 0000-00-00   | studdist3      |
+ studplace3      |              3 |               3 |
+|          3 |              4 | studname4      | 0000-00-00   | studdist4      |
+ studplace4      |              4 |               4 |
+|          4 |              5 | studname5      | 0000-00-00   | studdist5      |
+ studplace5      |              5 |               5 |
+|          5 |              6 | studname6      | 0000-00-00   | studdist6      |
+ studplace6      |              6 |               6 |
++------------+----------------+----------------+--------------+----------------+
+-----------------+----------------+-----------------+
+5 rows in set (0.00 sec)
+
+E)
+delimiter %%
+create procedure csp_insert_crs(in e int)
+begin
+declare count int default 1;
+insert_loop:loop
+insert into tbl_course(course_dept,course_fee,bln_course_status)values(concat('crsdept',count+1),count+1,count+1);
+set count=count+1;
+if count<=e then iterate insert_loop;
+else leave insert_loop;
+end if;
+end loop insert_loop;
+end %%
+delimiter ;
+call csp_insert_crs(5);
+
+
+mysql> select * from tbl_course;
++--------------+-------------+------------+-------------------+
+| pk_course_id | course_dept | course_fee | bln_course_status |
++--------------+-------------+------------+-------------------+
+|            1 | crsdept2    |          2 |                 2 |
+|            2 | crsdept3    |          3 |                 3 |
+|            3 | crsdept4    |          4 |                 4 |
+|            4 | crsdept5    |          5 |                 5 |
+|            5 | crsdept6    |          6 |                 6 |
++--------------+-------------+------------+-------------------+
+5 rows in set (0.00 sec)
+
+F)
+delimiter $$
+create procedure csp_insert_teachers(in i int)
+begin 
+declare count int default 1;
+insert_loop:loop
+insert into tbl_teacher(fk_user_id,vchr_tchr_name,fk_dept_id,dat_tchr_dob,vchr_tchr_place,tchr_head_id,bln_tchr_status)values(count-1-1,concat('tchrname',count+1),count+1,'1995-06-05',concat('place',count+1),count+1,count+1);
+set count=count+1;
+if count<=i then iterate insert_loop;
+end if;
+end loop insert_loop;
+end $$
+delimiter ;
+call csp_insert_teachers(5);
+
+
+mysql> select * from tbl_teacher;
++------------+------------+----------------+------------+--------------+--------
+---------+--------------+-----------------+
+| pk_tchr_id | fk_user_id | vchr_tchr_name | fk_dept_id | dat_tchr_dob | vchr_tc
+hr_place | tchr_head_id | bln_tchr_status |
++------------+------------+----------------+------------+--------------+--------
+---------+--------------+-----------------+
+|          1 |          2 | tchrname2      |          2 | 0000-00-00   | place2
+         |            2 |               2 |
+|          2 |          3 | tchrname3      |          3 | 0000-00-00   | place3
+         |            3 |               3 |
+|          3 |          4 | tchrname4      |          4 | 0000-00-00   | place4
+         |            4 |               4 |
+|          4 |          5 | tchrname5      |          5 | 0000-00-00   | place5
+         |            5 |               5 |
+|          5 |          6 | tchrname6      |          6 | 0000-00-00   | place6
+         |            6 |               6 |
+|          6 |          7 | tchrname7      |          7 | 0000-00-00   | place7
+         |            7 |               7 |
+|          7 |          8 | tchrname8      |          8 | 0000-00-00   | place8
+         |            8 |               8 |
+|          8 |          9 | tchrname9      |          9 | 0000-00-00   | place9
+         |            9 |               9 |
+|          9 |         10 | tchrname10     |         10 | 0000-00-00   | place10
+         |           10 |              10 |
+|         11 |          2 | tchrname2      |          2 | 0000-00-00   | place2
+         |            2 |               2 |
+|         12 |          3 | tchrname3      |          3 | 0000-00-00   | place3
+         |            3 |               3 |
+|         13 |          4 | tchrname4      |          4 | 0000-00-00   | place4
+         |            4 |               4 |
+|         14 |          5 | tchrname5      |          5 | 0000-00-00   | place5
+         |            5 |               5 |
+|         15 |          6 | tchrname6      |          6 | 0000-00-00   | place6
+         |            6 |               6 |
+|         16 |          7 | tchrname7      |          7 | 0000-00-00   | place7
+         |            7 |               7 |
+|         17 |          8 | tchrname8      |          8 | 0000-00-00   | place8
+         |            8 |               8 |
+|         18 |          9 | tchrname9      |          9 | 0000-00-00   | place9
+         |            9 |               9 |
+|         19 |         10 | tchrname10     |         10 | 0000-00-00   | place10
+         |           10 |              10 |
+|         21 |          2 | tchrname2      |          2 | 0000-00-00   | place2
+         |            2 |               2 |
+|         22 |          3 | tchrname3      |          3 | 0000-00-00   | place3
+         |            3 |               3 |
+|         23 |          4 | tchrname4      |          4 | 0000-00-00   | place4
+         |            4 |               4 |
+|         24 |          5 | tchrname5      |          5 | 0000-00-00   | place5
+         |            5 |               5 |
+|         25 |          6 | tchrname6      |          6 | 0000-00-00   | place6
+         |            6 |               6 |
+|         26 |          7 | tchrname7      |          7 | 0000-00-00   | place7
+         |            7 |               7 |
+|         27 |          8 | tchrname8      |          8 | 0000-00-00   | place8
+         |            8 |               8 |
+|         28 |          9 | tchrname9      |          9 | 0000-00-00   | place9
+         |            9 |               9 |
+|         29 |         10 | tchrname10     |         10 | 0000-00-00   | place10
+         |           10 |              10 |
++------------+------------+----------------+------------+--------------+--------
+---------+--------------+-----------------+
+27 rows in set (0.00 sec)
+
+G)
+delimiter $$
+create procedure csp_insert_fph(in i int)
+begin
+declare count int default 1;
+insert_loop:loop 
+insert into tbl_fee_pay_history(fk_stud_id,fph_amt,fph_date)values(count+1-1,count+1,'1995-04-03');
+set count=count+1;
+if count<=i then iterate insert_loop;
+end if;
+end loop insert_loop;
+end $$
+delimiter ;
+call csp_insert_fph(5);
+
+
+
+mysql> select * from tbl_fee_pay_history;
++-----------+------------+------------+---------+
+| pk_fph_id | fk_stud_id | fph_date   | fph_amt |
++-----------+------------+------------+---------+
+|         1 |          1 | 2015-05-06 |    5000 |
+|         2 |          2 | 2013-01-09 |    5500 |
+|         3 |          3 | 2015-05-06 |    5400 |
+|         4 |          4 | 2015-05-06 |    5300 |
+|         5 |          5 | 2014-05-06 |    4000 |
+|         6 |          2 | 0000-00-00 |       0 |
+|         7 |          3 | 0000-00-00 |       0 |
+|         8 |          4 | 0000-00-00 |       0 |
+|         9 |          5 | 0000-00-00 |       0 |
+|        10 |          6 | 0000-00-00 |       0 |
+|        11 |          7 | 0000-00-00 |       0 |
+|        12 |          8 | 0000-00-00 |       0 |
+|        13 |          9 | 0000-00-00 |       0 |
+|        15 |          1 | 1995-04-03 |       2 |
+|        16 |          2 | 1995-04-03 |       3 |
+|        17 |          3 | 1995-04-03 |       4 |
+|        18 |          4 | 1995-04-03 |       5 |
+|        19 |          5 | 1995-04-03 |       6 |
+|        20 |          6 | 1995-04-03 |       7 |
+|        21 |          7 | 1995-04-03 |       8 |
+|        22 |          8 | 1995-04-03 |       9 |
+|        23 |          9 | 1995-04-03 |      10 |
++-----------+------------+------------+---------+
+22 rows in set (0.00 sec)
+
+
+H)
+delimiter $$
+create procedure csp_insert_crsdept(in i int)
+begin
+declare count int default 1;
+insert_loop:loop 
+insert into tbl_crs_dept(fk_crs_id,fk_dept_id)values(count+1,count-1);
+set count=count+1;
+if count<=i then iterate insert_loop;
+end if;
+end loop insert_loop;
+end $$
+delimiter ;
+call csp_insert_crsdept(5);
+
+
+mysql> select * from tbl_crs_dept;
++-----------+-----------+------------+
+| pk_crs_id | fk_crs_id | fk_dept_id |
++-----------+-----------+------------+
+|         1 |         1 |          2 |
+|         2 |         2 |          3 |
+|         3 |         3 |          4 |
+|         4 |         4 |          5 |
+|         5 |         5 |          6 |
+|         7 |         2 |          2 |
+|         8 |         3 |          3 |
+|         9 |         4 |          4 |
+|        10 |         5 |          5 |
++-----------+-----------+------------+
+9 rows in set (0.00 sec)

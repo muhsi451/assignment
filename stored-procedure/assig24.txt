@@ -1,0 +1,19 @@
+delimiter $$
+create procedure studage1()
+begin
+select vchr_dept_name,extract(year from current_date)-extract(year from dat_stud_dob) as age from table_student join tbl_department on pk_stud_id=fk_stud_id;
+end $$
+delimiter ;
+call studage1();
+
++----------------+------+
+| vchr_dept_name | age  |
++----------------+------+
+| dept3          |    6 |
+| dept6          |    4 |
+| dept2          |    5 |
+| dept4          |    1 | 
++----------------+------+
+9 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.02 sec)

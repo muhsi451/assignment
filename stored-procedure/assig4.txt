@@ -1,0 +1,32 @@
+delimiter $$
+create procedure million(in j int)
+begin
+declare count int default 1;
+insert_loop:loop
+insert into tbl_grade(fk_int_no,vchr_course,vchr_grade)values(count+1,concat('course',count+1),concat('grade',count+1));
+set count=count+1;
+if count<=j then iterate insert_loop;
+else leave insert_loop;
+end if;
+end loop insert_loop;
+end $$
+delimiter ;
+call million(10);
+
+
+mysql> select * from tbl_grade;
++-----------+-------------+------------+
+| fk_int_no | vchr_course | vchr_grade |
++-----------+-------------+------------+
+|         2 | course2     | g          |
+|         3 | course3     | g          |
+|         4 | course4     | g          |
+|         5 | course5     | g          |
+|         6 | course6     | g          |
+|         7 | course7     | g          |
+|         8 | course8     | g          |
+|         9 | course9     | g          |
+|        10 | course10    | g          |
+|        11 | course11    | g          |
++-----------+-------------+------------+
+10 rows in set (0.00 sec)

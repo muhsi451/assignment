@@ -1,0 +1,16 @@
+delimiter $$
+create procedure lettert1()
+begin
+select tchrname,tchr_place from tbl_teachers where tchrname like "t%";
+end $$
+delimiter ;
+call lettert1();
+
++----------+------------+
+| tchrname | tchr_place |
++----------+------------+
+| tru      | tap        |
++----------+------------+
+1 row in set (0.00 sec)
+
+

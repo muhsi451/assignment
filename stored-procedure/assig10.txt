@@ -1,0 +1,9 @@
+mysql> desc tbl_department;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| pk_dept_id      | int(11)     | NO   | PRI | NULL    | auto_increment |
+| vchr_dept_name  | varchar(20) | YES  |     | NULL    |                |
+| bln_dept_active | tinyint(4)  | YES  |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+3 rows in set (0.02 sec)

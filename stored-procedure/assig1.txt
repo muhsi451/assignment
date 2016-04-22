@@ -1,0 +1,13 @@
+mysql> desc tbl_student;
++-------------------+-------------+------+-----+---------+----------------+
+| Field             | Type        | Null | Key | Default | Extra          |
++-------------------+-------------+------+-----+---------+----------------+
+| pk_int_no         | int(11)     | NO   | PRI | NULL    | auto_increment |
+| int_enrollment_no | int(11)     | YES  |     | NULL    |                |
+| vchr_name         | varchar(20) | YES  |     | NULL    |                |
+| vchr_city         | varchar(20) | YES  |     | NULL    |                |
+| vchr_mobileno     | varchar(15) | YES  |     | NULL    |                |
+| dat_dob           | date        | YES  |     | NULL    |                |
+| bln_status        | varchar(20) | YES  |     | NULL    |                |
++-------------------+-------------+------+-----+---------+----------------+
+7 rows in set (0.02 sec)

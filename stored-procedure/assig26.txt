@@ -1,0 +1,20 @@
+delimiter $$
+create procedure teachdept()
+begin
+select vchr_dept_name,tchr_head_id as headid from tbl_department join tbl_teachers on pk_dept_id=fk_dept_id;
+end $$
+delimiter ;
+call teachdept();
+
++----------------+--------+
+| vchr_dept_name | headid |
++----------------+--------+
+| dept2          |      1 |
+| dept3          |      2 |
+| dept4          |      3 |
+| dept5          |      4 |
+| dept6          |      5 |
++----------------+--------+
+5 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)

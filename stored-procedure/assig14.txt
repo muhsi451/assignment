@@ -1,0 +1,11 @@
+
+mysql> desc tbl_fee_pay_history;
++------------+---------+------+-----+---------+----------------+
+| Field      | Type    | Null | Key | Default | Extra          |
++------------+---------+------+-----+---------+----------------+
+| pk_fph_id  | int(11) | NO   | PRI | NULL    | auto_increment |
+| fk_stud_id | int(11) | YES  | MUL | NULL    |                |
+| fph_amt    | int(11) | YES  |     | NULL    |                |
+| fph_date   | date    | YES  |     | NULL    |                |
++------------+---------+------+-----+---------+----------------+
+4 rows in set (0.11 sec)

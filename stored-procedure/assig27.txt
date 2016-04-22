@@ -1,0 +1,7 @@
+delimiter $$
+create procedure fee2(in fee int,out stud int)
+begin
+select vchr_stud_name into stud from table_student join tbl_fee_pay_history on pk_stud_id=fk_stud_id where fph_amt=fee;
+end $$
+delimiter ;
+call fee2('NULL',@stud);

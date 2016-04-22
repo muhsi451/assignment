@@ -1,0 +1,7 @@
+delimiter //
+create procedure data2(in cty varchar(20),in crs varchar(20),out p int)
+begin
+select count(fk_int_no) into p from tbl_grade join tbl_student on fk_int_no=pk_int_no where vchr_city=cty and vchr_course=crs;
+end //
+delimiter ;
+call data2('java','city1',@p);

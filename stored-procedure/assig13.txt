@@ -1,0 +1,11 @@
+
+mysql> desc tbl_course;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| pk_course_id      | int(11)      | NO   | PRI | NULL    | auto_increment |
+| course_dept       | varchar(100) | YES  |     | NULL    |                |
+| course_fee        | int(11)      | YES  |     | NULL    |                |
+| bln_course_status | tinyint(1)   | YES  |     | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.03 sec)

@@ -1,0 +1,17 @@
+delimiter $$
+create procedure amt(in year int,out i int)
+begin
+select fph_amt into i from tbl_fee_pay_history where extract(year from fph_date)=year;
+end $$
+delimiter ;
+call amt(2014,@i);
+
+
+mysql> select @i;
++------+
+| @i   |
++------+
+| 4000 |
++------+
+1 row in set (0.00 sec)
+
